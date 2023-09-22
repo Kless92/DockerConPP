@@ -1,0 +1,788 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-09-22T18:39:58.630Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.8",
+    "resources": [
+        {
+            "_id": "req_8cb209a7b5084596989d42d6cfee22aa",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695359289916,
+            "created": 1695331484700,
+            "url": "http://localhost:5000/professors/1/course_pro",
+            "name": "course_pro",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695331484700,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1695359109045,
+            "created": 1695012386059,
+            "name": "professor",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1695015636562,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_24617512fddc414191a751700dc8ed4a",
+            "parentId": null,
+            "modified": 1694725619299,
+            "created": 1694725619299,
+            "name": "Spencer_CSM",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_25f343f1a44a4989bd92066b8a4e21e1",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695166508749,
+            "created": 1695148760088,
+            "url": "http://localhost:5000/professors/4",
+            "name": "update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Goddie\",\n\t\"useraccount_id\": \"4\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148760088,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_394857a701f74e908f6ad9c3d9bf463b",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695156136502,
+            "created": 1695148757623,
+            "url": "http://localhost:5000/professors/9",
+            "name": "delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148757623,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_1a412b9bb7544a81b303bf80f16900c5",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695157828788,
+            "created": 1695148728434,
+            "url": "http://localhost:5000/professors",
+            "name": "create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\" : \"Mario\",\n\t\"useraccount_id\" :2\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148728434,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9fca2669d28c42b9b91bd9c6c5115741",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695147901348,
+            "created": 1695145865320,
+            "url": "http://localhost:5000/professors/1",
+            "name": "show",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695145865320,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_6777e7585b4345c7aec2bfca6ea4dd76",
+            "parentId": "fld_b67c00d04fe84e0ba8597838f8052633",
+            "modified": 1695147897189,
+            "created": 1695012388624,
+            "url": "http://localhost:5000/professors",
+            "name": "index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695012388624,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c7eedbf17e734e6e863ad8edbd76b1b7",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695359282208,
+            "created": 1695325613120,
+            "url": "http://localhost:5000/courses/1/pro_course",
+            "name": "pro_course",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695325613120,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_78216f459e004352bd763d054882aaf1",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1695015636462,
+            "created": 1695015636462,
+            "name": "course",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1695015636462,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_b3971357694045fd94c9df7674ac64f9",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695336547934,
+            "created": 1695322141362,
+            "url": "http://localhost:5000/courses/4/students",
+            "name": "students",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695322141362,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_59ad611f579e4e76a211bd7bdf04fc66",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695166876197,
+            "created": 1695148907214,
+            "url": "http://localhost:5000/courses/6",
+            "name": "update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"History of Aferica\",\n\t\"start_date\": \"2024-06-01 11:00:00\",\n\t\"end_date\": \"2024-10-25 12:00:00\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148907214,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_27e50466c2674e9085dc73dee24cf3fc",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695335263561,
+            "created": 1695148866509,
+            "url": "http://localhost:5000/courses/9",
+            "name": "delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148866509,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c6f3b6ae91ed47e68c809cf14379d5ac",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695335219650,
+            "created": 1695148865502,
+            "url": "http://localhost:5000/courses",
+            "name": "create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "\t{\n\t\t\"end_date\": \"2024-10-25T12:00:00\",\n\t\t\"id\": 6,\n\t\t\"name\": \"History of Aferica\",\n\t\t\"start_date\": \"2024-06-01T11:00:00\"\n\t}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148865502,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e69c2e4730a64ee89fe42a15b235516a",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695321048539,
+            "created": 1695148860551,
+            "url": "http://localhost:5000/courses/1",
+            "name": "show",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148860551,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_142b7edb72d044c2889da0ea8252aff7",
+            "parentId": "fld_78216f459e004352bd763d054882aaf1",
+            "modified": 1695015771012,
+            "created": 1695015644208,
+            "url": "http://localhost:5000/courses",
+            "name": "index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695015644208,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fe3701eb2a6d416e9825964df638673d",
+            "parentId": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "modified": 1695335803088,
+            "created": 1695148842570,
+            "url": "http://localhost:5000/students/4",
+            "name": "update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\t\"course_id\": 11,\n\t\t\"name\": \"Fionna\",\n\t\t\"useraccount_id\": 3\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148842570,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1695359105740,
+            "created": 1695015626950,
+            "name": "student",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1694869007937,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_5e5ab95880f946f594e424337c0f83e1",
+            "parentId": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "modified": 1695335619403,
+            "created": 1695148831181,
+            "url": "http://localhost:5000/students/9",
+            "name": "delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148831181,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d87e74e6af5f4aa58016d4cdf304ff22",
+            "parentId": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "modified": 1695358786616,
+            "created": 1695148811394,
+            "url": "http://localhost:5000/students",
+            "name": "create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\t\"course_id\": 4,\n\t\t\"name\": \"Mobbie\",\n\t\t\"useraccount_id\": 2\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148811394,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ff705dbcf1bf43879f896af349fc4994",
+            "parentId": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "modified": 1695335966351,
+            "created": 1695148802947,
+            "url": "http://localhost:5000/students/2",
+            "name": "show",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695148802947,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4b6f18aa2ca1483abd439bccbc581376",
+            "parentId": "fld_34c5f1a7a8024a7bb717ba4876a6a257",
+            "modified": 1695015721756,
+            "created": 1695015639538,
+            "url": "http://localhost:5000/students",
+            "name": "index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1695015639538,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_01ed460e24cf42e692e369382d75259d",
+            "parentId": "fld_eb17b61d968047a68d500713272decba",
+            "modified": 1695006888996,
+            "created": 1694800914146,
+            "url": "http://localhost:5000/useraccounts/8",
+            "name": "update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Lyilla\",\n\t\"password\": \"sAlTLiCK111\",\n\t\"user_status\": \"professor\",\n\t\"email\": \"lyla@st.edu\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1694800914146,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_eb17b61d968047a68d500713272decba",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1694725629815,
+            "created": 1694725629815,
+            "name": "useraccount",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1694725629815,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_b0cc02137cb5424cbed9b30508f9a13f",
+            "parentId": "fld_eb17b61d968047a68d500713272decba",
+            "modified": 1695157933790,
+            "created": 1694797806733,
+            "url": "http://localhost:5000/useraccounts/25",
+            "name": "delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1694797806733,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_3450781e71c2419c81d21a8a1ccc2f54",
+            "parentId": "fld_eb17b61d968047a68d500713272decba",
+            "modified": 1695157918293,
+            "created": 1694753483594,
+            "url": "http://localhost:5000/useraccounts",
+            "name": "create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\": \"AAAA\",\n\t\"password\": \"fish1234\",\n\t\"email\": \"aaaa@hy.com\",\n\t\"user_status\": \"professor\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1694753483594,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ad40101069704330893f67477e3fd27c",
+            "parentId": "fld_eb17b61d968047a68d500713272decba",
+            "modified": 1695336405384,
+            "created": 1695005629821,
+            "url": "http://localhost:5000/useraccounts/1",
+            "name": "show",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1694739558564.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e7599922cc8a44c0905df79db25e77ae",
+            "parentId": "fld_eb17b61d968047a68d500713272decba",
+            "modified": 1695013840820,
+            "created": 1694725633535,
+            "url": "http://localhost:5000/useraccounts",
+            "name": "index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/2023.5.8"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1694725633535,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_369bdc93f0d52bf7c13d840604b2225d89495c05",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1694725619302,
+            "created": 1694725619302,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1694725619302,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_369bdc93f0d52bf7c13d840604b2225d89495c05",
+            "parentId": "wrk_24617512fddc414191a751700dc8ed4a",
+            "modified": 1694725619304,
+            "created": 1694725619304,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        }
+    ]
+}

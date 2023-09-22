@@ -70,7 +70,7 @@ in the table.)
         - is required
 
 #####API
-below are referances for each table 
+Below are referances for each table 
 containg endpoints, methods and parameters.
 They can be use with any open source desktop
 application.
