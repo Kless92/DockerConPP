@@ -1,0 +1,74 @@
+STUDENTS:
+INSERT INTO useraccounts (username, password, email)
+VALUES ('Acod', '1234', 'a@gmail.com');
+INSERT INTO useraccounts (username, password, email)
+VALUES ('BubbleBass', '5678', 'bass@gmail.com');
+INSERT INTO useraccounts (username, password)
+VALUES ('catzzz', 'kitten');
+INSERT INTO useraccounts (username, password, email)
+VALUES ('dogDude', 'doggie', 'dog@gmail.com');
+INSERT INTO useraccounts (username, password, email)
+VALUES ('mcDe', '1234', 'kfc@gamil.com');
+INSERT INTO useraccounts (username, password)
+VALUES ('JohnyK', '9999');
+INSERT INTO useraccounts (username, password)
+VALUES ('JandD', 'naughty');
+INSERT INTO useraccounts (username, password, email)
+VALUES ('lifeLover', 'love96', 'lolo@gmail.com');
+
+COURSES
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('History of Europe', TIMESTAMP '2024-01-15 10:00:00', TIMESTAMP '2024-05-22 11:30:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('Art Appreciation', TIMESTAMP '2024-01-15 14:30:00', TIMESTAMP '2024-05-22 16:00:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('Advance Physics', TIMESTAMP '2024-01-16 09:00:00', TIMESTAMP '2024-05-24 10:30:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('Advance Chemistry', TIMESTAMP '2024-01-15 10:00:00', TIMESTAMP '2024-05-21 11:30:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('Python IV', TIMESTAMP '2024-01-18 09:00:00', TIMESTAMP '2024-05-23 13:00:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('History of Propaganda', TIMESTAMP '2024-01-17 11:00:00', TIMESTAMP '2024-05-22 13:30:00');
+INSERT INTO courses (name, start_date, end_date)
+VALUES ('Egnlish II', TIMESTAMP '2024-01-15 08:30:00', TIMESTAMP '2024-05-24 10:00:00');
+
+PROFESSORS
+INSERT INTO professors(name, useraccount_id)
+VALUES ('Andy', 1);
+INSERT INTO professors(name, useraccount_id)
+VALUES ('Cathie', 5);
+INSERT INTO professors(name, useraccount_id)
+VALUES ('Edith', 8);
+INSERT INTO professors(name, useraccount_id)
+VALUES ('Gob', 4);
+
+STUDENTS
+INSERT INTO students(name, useraccount_id, course_id)
+VALUES ('Bob', 2, 4);
+INSERT INTO students(name, useraccount_id, course_id)
+VALUES ('Duge', 6, 1);
+INSERT INTO students(name, useraccount_id)
+VALUES ('Fiona', 3);
+INSERT INTO students(name, useraccount_id, course_id)
+VALUES ('Hanna', 7, 7);
+
+COURSES_PROFESSORS
+INSERT INTO courses_professors (course_id, professor_id)
+VALUES (1, 4);
+INSERT INTO courses_professors (course_id, professor_id)
+VALUES (3, 2);
+INSERT INTO courses_professors (course_id, professor_id)
+VALUES (4, 3);
+INSERT INTO courses_professors (course_id, professor_id)
+VALUES (7, 1);
+
+
+
+Andy teach 1
+Bob student 2 , 4
+Cathie teach 5
+Duge student 6, 1
+Edith teach 8
+Fionna student 3
+Gob teach 4
+Hanna student 7, 7
