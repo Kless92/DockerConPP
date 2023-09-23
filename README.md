@@ -1,5 +1,7 @@
 #Course Management System
+
 ####SQL Portfolio Project 
+
 #####by Spencer Klessens
 
 This *CMS* is uesed for universities to store information 
@@ -11,6 +13,7 @@ have a list of variables with there own requirments and rules.
 in the table.)
 
 **useraccounts**
+
     - username
         - must be 3 characters long
         - *unique*
@@ -30,6 +33,7 @@ in the table.)
         - is required.
 
 **students**
+
     - name
         - name of the student enrolled,
         - is required.
@@ -45,6 +49,7 @@ in the table.)
         - if filled must be from courses table
 
 **professors**
+
     - name
         - name of employied professor,
         - is required.
@@ -55,6 +60,7 @@ in the table.)
         - must be from useraccounts table
 
 **course**
+
     - name
         - name of the course
         - is required
@@ -70,6 +76,7 @@ in the table.)
         - is required
 
 #####API
+
 Below are referances for each table 
 containg endpoints, methods and parameters.
 They can be use with any open source desktop
@@ -135,5 +142,4 @@ application.
 
 3.) What future improvements are in store, if any?
     If I do return to my CMS I would look back on my original Entiry-relationship diagram
-    for ideas and find ways to improve on my current version.# SQlproject
-# SQlproject
+    for ideas and find ways to improve on my current version.
