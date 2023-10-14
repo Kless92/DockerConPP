@@ -1,8 +1,8 @@
-#Course Management System
+<h1>Course Management System</h1>
 
-####SQL Portfolio Project 
+<h3>SQL Portfolio Project</h3>
 
-#####by Spencer Klessens
+<h4>by Spencer Klessens</h4>
 
 This *CMS* is uesed for universities to store information 
 as four categories; students, professors courses and useraccounts.
@@ -75,12 +75,13 @@ in the table.)
         - hour-minuite-second *hh-mm-ss*
         - is required
 
-#####API
+<h4>API</h4>
 
 Below are referances for each table 
 containg endpoints, methods and parameters.
 They can be use with any open source desktop
-application.
+application. (Its recommended to use SQLAlchemy flask. 
+If you are make sure to type "flask run" in the command promt.)
 
 - **index**: loads all data from table
 - **shows**: loads one data row from table base on ID 

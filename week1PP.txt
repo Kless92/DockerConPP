@@ -1,0 +1,34 @@
+
+    Following the Workshop at the end of this week, write a Portfolio Project report with your answers to the following questions:
+
+    1.) What are the various features you would like your project to offer? 
+
+    2.) What are the API endpoints that you would need to set up for each feature? 
+        List them along with the respective HTTP verb, endpoint URL, and any special 
+        details (query parameters, request bodies, headers). 
+
+    3.) Provide a description of the database tables required for your application, 
+        including column names, data types, constraints, and foreign keys. Include 
+        your database name. You can optionally include an ER diagram. 
+---------------------------------------------------------------------------------------
+    1.) I would add my original features before I hand to cut them out for time.
+        Which includes if professor is a grad student, what building and room
+        number the course would be taken and if what professor will sub if one 
+        is absent.
+
+    2.) Building will have is own folder containing ther own endpoints.
+        index - Show all id and room reated to building. http://address/building
+        show - Shows room base on id. http://address/building/id
+        post - Create new room with id, if parameteres are meet. http://address/building
+        delete - Removes slected room on id. http://address/building/id
+        update - Updates room base on id, if parameters are meet. http://address/building/id
+        course - Shows what room the course would be held. http://address/building/id
+        update_coures - Update what coure will be place in a room, if the parameters are mett.
+                        or make the room vacant. http://address/building/id
+
+        In the professors folder, two new endpoint will be added.
+        One will show the name of professors who are also grad students. http://address/professors
+        The other will show professors who are available to sub if one is absent. http://address/professors
+    
+    3.) "Show original PPER" called spencerPPER.drawio or make few changes before making a final version to submit
+        
