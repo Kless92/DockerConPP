@@ -68,10 +68,11 @@ class Course(db.Model):
     name = db.Column(db.String(80), nullable=False)
     start_date = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
     end_date = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
-    
+
     students = db.relationship('Student', backref='course', lazy=True)
     pro_course = db.relationship('Professor', secondary=cp_table, lazy='subquery',
                                   backref=db.backref('course_pro',lazy=True))
+    roNum = db.relationship('Building', backref='course', lazy=True)    
     
     def __init__(self, name: str, start_date: datetime, end_date: datetime):
            self.name = name,
@@ -91,16 +92,21 @@ class Professor(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(128), nullable=False)
     useraccount_id = db.Column(db.Integer, db.ForeignKey('useraccounts.id'), nullable=False)
+    grad_student = db.Column(db.Boolean, nullable=False)
+    sub = db.Column(db.Boolean, nullable=False)
 
-    def __init__(self, name: str, useraccount_id: int):
-           self.name = name,
-           self.useraccount_id = useraccount_id
-    
+    def __init__(self, name: str, useraccount_id: int, grad_student: bool, sub: bool):
+            self.name = name,
+            self.useraccount_id = useraccount_id
+            self.grad_student = grad_student
+            self.sub = sub
     def serialize(self):
            return {
                   'id': self.id,
                   'name': self.name,
-                  'useraccount_id': self.useraccount_id
+                  'useraccount_id': self.useraccount_id,
+                  'grad_student': self.grad_student,
+                  'sub': self.sub
            }
 
 #Building table
@@ -109,16 +115,19 @@ class Building(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(128), nullable=False)
     room = db.Column(db.String(128), nullable=False)
+    course_id = db.Column(db.Integer, db.ForeignKey('courses.id'))
 
-    def __init__(self, name: str, room: str):
+    def __init__(self, name: str, room: str, course_id: int):
         self.name = name,
-        self.room = room
+        self.room = room,
+        self.course_id = course_id
 
     def serialize(self):
         return {
             'id': self.id,
             'name': self.name,
-            'room': self.room
+            'room': self.room,
+            'course_id': self.course_id
         }
 #to protect password
 def scramble(password: str):
@@ -309,13 +318,19 @@ def proshow(id: int):
 #creates a new professor row
 @app.route('/professors', methods=['POST'])
 def procreate():
-    if 'name' not in request.json or 'useraccount_id' not in request.json:
+    if 'name' not in request.json or 'useraccount_id' not in request.json and 'grad_student' not in request.json and 'sub' not in request.json:
         return abort(400)
     elif len(request.json['name']) < 3:
         return abort(400)
+    elif request.json['grad_student'] != True and request.json['grad_student'] != False:
+        return abort(400)
+    elif request.json['grad_student'] != True and request.json['grad_student'] != False:
+        return abort(400)
     p = Professor(
         name=request.json['name'],
-        useraccount_id=request.json['useraccount_id']
+        useraccount_id=request.json['useraccount_id'],
+        grad_student=request.json['grad_student'],
+        sub=request.json['sub']
     )
     #Prevent 500 error if id in User_Account doens't exist
     try:
@@ -340,7 +355,7 @@ def prodelete(id: int):
 @app.route('/professors/<int:id>', methods=['PATCH','PUT'])
 def proupdate(id: int):
     p = Professor.query.get_or_404(id)
-    if 'name' not in request.json and 'useraccount_id' not in request.json:
+    if 'name' not in request.json and 'useraccount_id' not in request.json and 'grad_student' not in request.json and 'sub' not in request.json:
         return abort(400)
     if 'name' in request.json:
         if len(request.json['name']) < 3:
@@ -349,6 +364,16 @@ def proupdate(id: int):
             p.name = request.json['name']
     if 'useraccount_id' in request.json:
         p.useraccount_id = request.json['useraccount_id'] 
+    if 'grad_student' in request.json:
+        if request.json['grad_student'] != True and request.json['grad_student'] != False:
+            return abort(400)
+        else:
+            p.useraccount_id = request.json['grad_student'] 
+    if 'sub' in request.json:
+        if request.json['grad_student'] != True and request.json['grad_student'] != False:
+            return abort(400)
+        else:
+            p.useraccount_id = request.json['grad_student'] 
     try:
         db.session.commit()
         return jsonify(p.serialize())
@@ -369,6 +394,31 @@ def procourse_pro(id: int):
         return abort(400, 'Professor not assign to any course.')
     else:
         return jsonify(result)
+    
+#Show all professors that are grad students
+@app.route('/professors/gradStudent', methods=['GET'])
+def prograd():
+    p = Professor.query.all() 
+    result = []
+    for i in p:
+        if i.grad_student == True:
+            result.append(i.serialize()) 
+    if not result:
+        return abort(400, 'No grad students were found.')
+    return jsonify(result) 
+
+#Show all professors that can be substitutes
+@app.route('/professors/substitutes', methods=['GET'])
+def prosub():
+    p = Professor.query.all() 
+    result = []
+    for i in p:
+        if i.sub == True:
+            result.append(i.serialize()) 
+    if not result:
+        return abort(400, 'No available substitutes were found.')
+    return jsonify(result) 
+
 ###################################
 ############Course API#############
 ###################################
@@ -462,6 +512,19 @@ def corpro_course(id: int):
     else:
         return jsonify(result)
 
+#Shows the building and room for course
+@app.route('/courses/<int:id>/room', methods=['GET'])
+def roomcourse(id: int):
+    c = Course.query.get_or_404(id, "Course not found")
+    result = []
+    for i in c.roNum:
+        result.append(i.serialize())
+        result.append(c.serialize())
+    if not result:
+        return abort(400, "This course has no room assinged.")
+    else:
+        return jsonify(result)
+
 ###################################
 ###########Buildings API###########
 ###################################
@@ -517,6 +580,8 @@ def updateBul(id: int):
     b = Building.query.get_or_404(id)
     if 'name' not in request.json and 'room' not in request.json:
         return abort(400)
+    if 'course_id' in request.json:
+        return abort(400)
     if 'name' in request.json:
         if len(request.json['name']) < 3:
             return abort(400)
@@ -527,6 +592,24 @@ def updateBul(id: int):
             return abort(400)
         else:   
             b.room = request.json['room']
+    try:
+        db.session.commit()
+        return jsonify(b.serialize())
+    except:
+        return jsonify(False)
+
+#Changes the course_id of the selected building
+@app.route('/courses/<int:id>/change', methods=['PATCH','PUT'])
+def chBulcourse(id: int):
+    b = Building.query.get_or_404(id)
+    if 'name' in request.json and 'room' in request.json:
+        return abort(400)
+    if 'course_id' not in request.json:
+        return abort(400)
+    if 'course_id' not in request.json:
+        return abort(400)
+    else:   
+        b.course_id = request.json['course_id']
     try:
         db.session.commit()
         return jsonify(b.serialize())
