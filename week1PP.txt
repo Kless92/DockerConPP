@@ -22,8 +22,10 @@
         post - Create new room with id, if parameteres are meet. http://address/building
         delete - Removes slected room on id. http://address/building/id
         update - Updates room base on id, if parameters are meet. http://address/building/id
-        course - Shows what room the course would be held. http://address/building/id
-        update_coures - Update what coure will be place in a room, if the parameters are mett.
+
+        Two course endpoints:
+        room - Shows what room the course would be held. http://address/building/id
+        update_room - Update what coure will be place in a room, if the parameters are met.
                         or make the room vacant. http://address/building/id
 
         In the professors folder, two new endpoint will be added.

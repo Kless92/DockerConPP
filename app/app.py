@@ -103,6 +103,23 @@ class Professor(db.Model):
                   'useraccount_id': self.useraccount_id
            }
 
+#Building table
+class Building(db.Model):
+    __tablename__='buildings'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(128), nullable=False)
+    room = db.Column(db.String(128), nullable=False)
+
+    def __init__(self, name: str, room: str):
+        self.name = name,
+        self.room = room
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'room': self.room
+        }
 #to protect password
 def scramble(password: str):
     salt = secrets.token_hex(16)
@@ -445,6 +462,77 @@ def corpro_course(id: int):
     else:
         return jsonify(result)
 
+###################################
+###########Buildings API###########
+###################################
+#retrieves all building's info from buildings table
+@app.route('/buildings', methods=['GET']) 
+def indexBul():
+    b = Building.query.all() 
+    result = []
+    for i in b:
+        result.append(i.serialize()) 
+    return jsonify(result) 
+
+#retrieves selected bulding by id number
+@app.route('/buildings/<int:id>', methods=['GET'])
+def showBul(id: int):
+    b = Building.query.get_or_404(id, "Building not found")
+    return jsonify(b.serialize())
+
+#creates a new building row
+@app.route('/buildings', methods=['POST'])
+def createBul():
+    if 'name' not in request.json or 'room' not in request.json:
+        return abort(400)
+    elif len(request.json['name']) < 3:
+        return abort(400)
+    elif len(request.json['room']) < 3:
+        return abort(400)
+    b = Building(
+        name=request.json['name'],
+        room=request.json['room']
+    )
+    try:
+        db.session.add(b)
+        db.session.commit()
+        return jsonify(b.serialize())
+    except:
+        return abort(400)
+    
+#Delete selected id from building Table
+@app.route('/buildings/<int:id>', methods=['DELETE'])
+def deleteBul(id: int):
+    b = Building.query.get_or_404(id, 'Building ID not found')
+    try:
+        db.session.delete(b)
+        db.session.commit()
+        return jsonify(True)
+    except:
+        return jsonify(False)
+    
+#Put/Patch existing building
+@app.route('/buildings/<int:id>', methods=['PATCH','PUT'])
+def updateBul(id: int):
+    b = Building.query.get_or_404(id)
+    if 'name' not in request.json and 'room' not in request.json:
+        return abort(400)
+    if 'name' in request.json:
+        if len(request.json['name']) < 3:
+            return abort(400)
+        else:   
+            b.name = request.json['name']
+    if 'room' in request.json:
+        if len(request.json['room']) < 3:
+            return abort(400)
+        else:   
+            b.room = request.json['room']
+    try:
+        db.session.commit()
+        return jsonify(b.serialize())
+    except:
+        return jsonify(False)
+    
 ###################################
 ########Basic Web Address##########
 ###################################
