@@ -6,8 +6,8 @@ services:
     command: python app.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
-    expose:
-      - 8000
+    ports:
+      - 8000:5000
     environment:
       - DB_NAME=cms_db
       - DB_USER=postgres
