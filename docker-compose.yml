@@ -14,7 +14,7 @@ services:
       - DB_HOST=cms.c0h1kjfybabt.us-east-2.rds.amazonaws.com
       - DB_PORT=5432
       - DATABASE=postgres
-      - VIRTUAL_HOST=ec2-18-220-100-203.us-east-2.compute.amazonaws.com
+      - VIRTUAL_HOST=ec2-3-17-91-180.us-east-2.compute.amazonaws.com
       - VIRTUAL_PORT=8000
     depends_on:
       - pg
