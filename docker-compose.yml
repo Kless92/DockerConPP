@@ -3,6 +3,11 @@ services:
   web:
     build: ./app
     image: 228841907158.dkr.ecr.us-east-2.amazonaws.com/spencercms_docker_aws
+    command: python app.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app/:/usr/src/app/
+    expose:
+      - 8000
     environment:
       - DB_NAME=cms_db
       - DB_USER=postgres
