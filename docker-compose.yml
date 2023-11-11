@@ -2,7 +2,7 @@ version: "3.8"
 services:
   web:
     build: ./app
-    command: python app.py runserver 0.0.0.0:5000
+    command: 228841907158.dkr.ecr.us-east-2.amazonaws.com/spencercms_docker_aws
     volumes:
       - ./app/:/usr/src/app/
     ports:
@@ -11,9 +11,11 @@ services:
       - DB_NAME=cms_db
       - DB_USER=postgres
       - DB_PASSWORD=admin123
-      - DB_HOST=pg
+      - DB_HOST=cms.c0h1kjfybabt.us-east-2.rds.amazonaws.com
       - DB_PORT=5432
       - DATABASE=postgres
+      - VIRTUAL_HOST=ec2-18-220-100-203.us-east-2.compute.amazonaws.com
+      - VIRTUAL_PORT=8000
     depends_on:
       - pg
   pg:
