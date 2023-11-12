@@ -25,10 +25,10 @@ in the table.)
         - does **not** have to be *unique*
 
     - email
-        - **not** required
+        - is required
         - must be *unique*
 
-    - user status
+    - user_status
         - shows if user account is a student or professor.
         - is required.
 
@@ -59,7 +59,15 @@ in the table.)
         - is required
         - must be from useraccounts table
 
-**course**
+    - grad_student
+        - bool "true" or "false"
+        - is required
+
+    - sub
+        - bool "true" or "false"
+        - is required
+
+**courses**
 
     - name
         - name of the course
@@ -74,6 +82,21 @@ in the table.)
         - year-month-day *yyyy-mm-dd*
         - hour-minuite-second *hh-mm-ss*
         - is required
+    - room
+        - course buildings id
+        - not required
+
+**buildings**
+
+    -name
+        - name of the building
+        - is required
+    -room
+        -room name in the building
+        -is required
+    -course_id
+        - buildings course id
+        -is required
 
 <h4>API</h4>
 
@@ -94,53 +117,57 @@ If you are make sure to type "flask run" in the command promt.)
 
 **useraccounts**
 
-|            endpoints            |  mehtods |  parameters   |
-|---------------------------------|----------|---------------|
-|http://servername/useraccounts   |   index  |     none      |
-|http://servername/useraccounts/id|   shows  |  **integer**  |
-|http://servername/useraccounts   |  create  |     none      |
-|http://servername/useraccounts/id|  delete  |  **integer**  |
-|http://servername/useraccounts/id|  update  |  **integer**  |
+|                endpoints                   |  mehtods |  parameters   |
+|---------------------------------|----------|----------|               |
+|http://servername:port/useraccounts         |   index  |     none      |
+|http://servername:port/useraccounts/id      |   shows  |  **integer**  |
+|http://servername:port/useraccounts         |  create  |     none      |
+|http://servername:port/useraccounts/id      |  delete  |  **integer**  |
+|http://servername:port/useraccounts/id      |  update  |  **integer**  |
 
 **students**
 
-|            endpoints            |  mehtods |  parameters   |
-|---------------------------------|----------|---------------|
-|http://servername/students       |   index  |     none      |
-|http://servername/students/id    |   shows  |  **integer**  |
-|http://servername/students       |  create  |     none      |
-|http://servername/students/id    |  delete  |  **integer**  |
-|http://servername/students/id    |  update  |  **integer**  |
+|               endpoints              |  mehtods |  parameters   |
+|--------------------------------------|----------|---------------|
+|http://servername:port/students       |   index  |     none      |
+|http://servername:port/students/id    |   shows  |  **integer**  |
+|http://servername:port/students       |  create  |     none      |
+|http://servername:port/students/id    |  delete  |  **integer**  |
+|http://servername:port/students/id    |  update  |  **integer**  |
 
 **courses**
 
-|                endpoints                  |  mehtods |  parameters   |
-|-------------------------------------------|----------|---------------|
-|http://servername/courses                  |   index  |     none      |
-|http://servername/courses/id               |   shows  |  **integer**  |
-|http://servername/courses                  |  create  |     none      |
-|http://servername/courses/id               |  delete  |  **integer**  |
-|http://servername/courses/id               |  update  |  **integer**  |
-|http://localhost:5000/courses/id/students  | students |  **integer**  |
-|http://localhost:5000/courses/id/pro_course|pro_course|  **integer**  |
+|                   endpoints                    |  mehtods |  parameters   |
+|------------------------------------------------|----------|---------------|
+|http://servername:port/courses                  |   index  |     none      |
+|http://servername:port/courses/id               |   shows  |  **integer**  |
+|http://servername:port/courses                  |  create  |     none      |
+|http://servername:port/courses/id               |  delete  |  **integer**  |
+|http://servername:port/courses/id               |  update  |  **integer**  |
+|http://servername:port/courses/id/students      | students |  **integer**  |
+|http://servername:port/courses/id/pro_course    |pro_course|  **integer**  |
+|http://servername:port/courses/id/room          |  room    |  **integer**  |
 
 **professors**
 
-|                   endpoints                  |  mehtods |  parameters   |
-|----------------------------------------------|----------|---------------|
-|http://servername/professors                  |   index  |     none      |
-|http://servername/professors/id               |   shows  |  **integer**  |
-|http://servername/professors                  |  create  |     none      |
-|http://servername/professors/id               |  delete  |  **integer**  |
-|http://servername/professors/id               |  update  |  **integer**  |
-|http://localhost:5000/professors/id/course_pro|course_pro|  **integer**  |
+|                      endpoints                    |  mehtods  |  parameters   |
+|---------------------------------------------------|-----------|---------------|
+|http://servername:port/professors                  |   index   |     none      |
+|http://servername:port/professors/id               |   shows   |  **integer**  |
+|http://servername:port/professors                  |  create   |     none      |
+|http://servername:port/professors/id               |  delete   |  **integer**  |
+|http://servername:port/professors/id               |  update   |  **integer**  |
+|http://servername:port/professors/id/course_pro    |course_pro |  **integer**  |
+|http://servername:port/professors/gradStudent      |gradStudent|     none      |
+|http://servername:port/professors/subsititues      |subsititues|     none      |
 
-1.) How did the project's design evolve over time?
-    During my time working on my CMS, I came up ideas I could use for it and how it would work.
+**buildings**
 
-2.) Did you choose to use an ORM or raw SQL? Why?
-    I use ORM.  I have a better understanding wiht ptyhon then with SQL so I went with that.
-
-3.) What future improvements are in store, if any?
-    If I do return to my CMS I would look back on my original Entiry-relationship diagram
-    for ideas and find ways to improve on my current version.# DockerConPP
+|                      endpoints                    |  mehtods  |  parameters   |
+|---------------------------------------------------|-----------|---------------|
+|http://servername:port/buildings                   |   index   |     none      |
+|http://servername:port/buildings/id                |   shows   |  **integer**  |
+|http://servername:port/buildings                   |  create   |     none      |
+|http://servername:port/buildings/id                |  delete   |  **integer**  |
+|http://servername:port/buildings/id                |  update   |  **integer**  |
+|http://servername:port/courses/id/change           |   change  |  **interger** |
