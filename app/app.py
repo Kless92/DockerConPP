@@ -8,7 +8,7 @@ db = SQLAlchemy()
 
 app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI='postgresql://cms.c0h1kjfybabt.us-east-2.rds.amazonaws.com:5432/cms_db'  % quote('admin123'),
+        SQLALCHEMY_DATABASE_URI='cms.c0h1kjfybabt.us-east-2.rds.amazonaws.com:5432/cms_db'  % quote('admin123'),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
         SQLALCHEMY_ECHO=True
     )
