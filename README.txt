@@ -5,7 +5,7 @@
 <h4>by Spencer Klessens</h4>
 
 This *CMS* is uesed for universities to store information 
-as four categories; students, professors courses and useraccounts.
+as five categories; students, professors courses, buildings and useraccounts.
 Each category has there own tables and they contains *unique* 
 ID's and additional information. Below, each category with will
 have a list of variables with there own requirments and rules.
@@ -135,10 +135,9 @@ If you are make sure to type "flask run" in the command promt.)
 |http://servername/professors/id               |  update  |  **integer**  |
 |http://localhost:5000/professors/id/course_pro|course_pro|  **integer**  |
 
-1.) How did the project's design evolve over time?
-    During my time working on my CMS, I came up ideas I could use for it and how it would work.
+This project was push into a docker inside a EC2 in AWS and is up and running
 
-2.) Did you choose to use an ORM or raw SQL? Why?
+http://ec2-3-17-91-180.us-east-2.compute.amazonaws.com:8000/
     I use ORM.  I have a better understanding wiht ptyhon then with SQL so I went with that.
 
 3.) What future improvements are in store, if any?
