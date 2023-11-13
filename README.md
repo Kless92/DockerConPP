@@ -5,7 +5,7 @@
 <h4>by Spencer Klessens</h4>
 
 This *CMS* is uesed for universities to store information 
-as four categories; students, professors courses and useraccounts.
+as four categories; students, professors courses, buildings and useraccounts.
 Each category has there own tables and they contains *unique* 
 ID's and additional information. Below, each category with will
 have a list of variables with there own requirments and rules.
@@ -171,3 +171,7 @@ If you are make sure to type "flask run" in the command promt.)
 |http://servername:port/buildings/id                |  delete   |  **integer**  |
 |http://servername:port/buildings/id                |  update   |  **integer**  |
 |http://servername:port/courses/id/change           |   change  |  **interger** |
+
+
+This Repocitory is now uploaded into a docker container in a EC2 on AWS link is below:
+http://ec2-3-17-91-180.us-east-2.compute.amazonaws.com:8000/
